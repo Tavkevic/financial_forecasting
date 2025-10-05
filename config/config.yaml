@@ -1,0 +1,16 @@
+data:
+  price_columns: ['open', 'high', 'low', 'close', 'volume']
+  news_columns: ['title', 'content', 'date', 'sentiment']
+  sequence_length: 60
+  forecast_horizon: 10
+
+model:
+  lstm_units: [128, 64]
+  dropout_rate: 0.3
+  learning_rate: 0.001
+  batch_size: 32
+  epochs: 100
+
+features:
+  technical_indicators: ['sma', 'ema', 'rsi', 'macd', 'bollinger']
+  news_features: ['sentiment_score', 'topic_clusters', 'urgency_score']
